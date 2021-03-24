@@ -1,0 +1,13 @@
+type: object
+required:
+  - serialNumber
+  - confmap
+properties:
+  serialNumber:
+    type: 'string'
+    example: '00:0d:b9:44:71:d0'
+  confmap:
+    type: string
+    example: '1000000000'
+    maxLength: 10
+    minLength: 10

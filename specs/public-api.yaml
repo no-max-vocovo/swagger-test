@@ -1,0 +1,39 @@
+openapi: '3.0.0'
+info:
+  description: "
+    All http-requests must be authorized by Vocovo. You may issue tokens on the [page](https://portal.vocovo.com/api/token-management). Make sure you have \"API feature\" enabled  for your group (and all its parents) under which you are going to issue your token. You can find more info [here](https://docs.google.com/document/d/1DsAbEX3xk4PlQsg9MCpRXM4FtiXylOMEp0xcI0Y6r_8/edit?usp=sharing)
+
+
+    To make API call authorized just provide **Bearer** token in http header: `Authorization: Bearer your:token`
+
+
+    Currently you can send message cast configured on https://portal.vocovo.com/message. If you don’t have / don’t want to configure anything on the portal side – you can send notification via dedicated endpoint (see according endpoint description).
+
+
+    This swagger doc can help you to make requests:
+
+    1. just press \"Authorize\" button and type “Bearer _your:token_”
+
+    2. click \"Try it out\" button in endpoint expanded view
+
+    3. configure body according to your request
+
+    4. press \"Execute\" button
+
+  "
+  version: '1.0.0'
+  title: 'Vocovo Public API'
+  contact:
+    email: 'help@vocovo.com'
+servers:
+  - url: /v1
+tags:
+  - name: 'notifications'
+  - name: 'message-cast'
+paths:
+  /notifications:
+    $ref: endpoints/notifications/notifications.yaml
+  /message-cast:
+    $ref: endpoints/message-cast/message-cast.yaml
+  /upload:
+    $ref: endpoints/upload/upload.yaml

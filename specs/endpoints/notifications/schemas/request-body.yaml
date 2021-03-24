@@ -1,0 +1,25 @@
+type: 'object'
+required:
+  - targetControllers
+  - repeats
+  - interval
+properties:
+  targetControllers:
+    type: array
+    minLength: 1
+    items:
+      $ref: target-controller.yaml
+  repeats:
+    type: integer
+    format: int32
+    minimum: 1
+    maximum: 10
+    example: 1
+  interval:
+    type: integer
+    format: int32
+    minimum: 1
+    example: 1
+  webhook:
+    type: string
+    example: 'https://postman-echo.com/post'

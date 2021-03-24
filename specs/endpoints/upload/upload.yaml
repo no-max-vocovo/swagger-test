@@ -1,0 +1,30 @@
+post:
+  tags:
+    - 'upload'
+  description: "
+    Used to upload files (currently audio files in mp3 format only). `id` from the response can be used to refer to uploaded audio in `/notifications` endpoint so make sure you saved a received identifier in your system.
+
+  "
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: schemas/request-body.yaml
+  responses:
+    200:
+      description: 'successful operation'
+      content:
+        application/json:
+          schema:
+            $ref: schemas/response-body.yaml
+    500:
+      description: Error
+    400:
+      description: '**Possible messages**: Content is not mp3 | Blob with key: [generated key] was not uploaded'
+      content:
+        application/json:
+          schema:
+            $ref: ../../schemas/bad-request.yaml
+  security:
+    - api_token: []

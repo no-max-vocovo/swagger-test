@@ -1,0 +1,13 @@
+type: object
+required:
+  - serialNumber
+  - confnum
+properties:
+  serialNumber:
+    type: 'string'
+    example: '00:0d:b9:44:71:d0'
+  confnum:
+    type: integer
+    example: 1
+    minimum: 1
+    maximum: 10

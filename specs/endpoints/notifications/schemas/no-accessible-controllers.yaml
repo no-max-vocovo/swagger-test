@@ -1,0 +1,24 @@
+type: object
+allOf:
+  - $ref: ../../../schemas/bad-request.yaml
+  - type: object
+    properties:
+      message:
+        type: string
+        example: 'No accessible controllers'
+      data:
+        type: array
+        items:
+          type: object
+        example:
+          [
+            {
+              'serialNumber': '01:6d:t9:5s:5f:ab',
+              'confmap': '0011000000',
+              'available': false,
+              'message': 'Error - no access to controller',
+            },
+          ]
+      errors:
+        type: object
+        example: {}

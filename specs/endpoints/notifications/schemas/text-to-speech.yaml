@@ -1,0 +1,13 @@
+type: 'object'
+required:
+  - text
+properties:
+  name:
+    type: 'string'
+    example: 'test.mp3'
+  text:
+    type: 'string'
+    example: 'Text to speech'
+  voiceName:
+    type: 'string'
+    example: 'en-GB-MiaNeural'

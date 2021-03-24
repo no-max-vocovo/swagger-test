@@ -1,0 +1,5 @@
+type: 'object'
+maxProperties: 2
+anyOf:
+  - $ref: multi-conferences-controller.yaml
+  - $ref: single-conferences-controller.yaml

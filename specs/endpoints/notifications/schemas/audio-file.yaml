@@ -1,0 +1,12 @@
+type: 'object'
+required:
+  - content
+properties:
+  name:
+    type: 'string'
+    example: 'test.mp3'
+  content:
+    type: 'string'
+    format: 'byte'
+    description: Base64 encoded mp3 file
+    example: 'TWFuIGlzIGRpc3Rpbmd...'

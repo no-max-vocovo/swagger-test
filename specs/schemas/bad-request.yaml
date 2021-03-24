@@ -1,0 +1,14 @@
+type: object
+properties:
+  name:
+    type: string
+    example: 'BadRequest'
+  code:
+    type: integer
+    example: 400
+  className:
+    type: string
+    example: 'bad-request'
+  errors:
+    type: object
+    example: {}

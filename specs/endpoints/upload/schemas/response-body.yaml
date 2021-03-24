@@ -1,0 +1,17 @@
+type: object
+properties:
+  id:
+    type: number
+    format: uuid
+    example: 1
+  groupId:
+    type: string
+    example: strongbyte-solutions-ltd
+  blobId:
+    type: string
+    format: uuid
+    example: '9e722c50-34ff-47a0-8126-fd0588f96292'
+  createdAt:
+    type: string
+    format: utc
+    example: '2020-12-09T09:12:45.860Z'

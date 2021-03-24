@@ -1,0 +1,8 @@
+allOf:
+  - $ref: request-body.yaml
+  - type: object
+    required:
+      - audioFile
+    properties:
+      audioFile:
+        $ref: audio-file.yaml

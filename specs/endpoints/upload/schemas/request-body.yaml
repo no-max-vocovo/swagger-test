@@ -1,0 +1,13 @@
+type: object
+required:
+  - type
+  - content
+properties:
+  type:
+    type: string
+    enum: [AUDIO]
+    example: AUDIO
+  content:
+    type: string
+    format: base64
+    example: SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU3LjcxLjEwMAAAAAAAAAAAAAAA/

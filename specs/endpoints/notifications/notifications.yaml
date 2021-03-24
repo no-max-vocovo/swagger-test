@@ -1,0 +1,52 @@
+post:
+  tags:
+    - 'notifications'
+  description: "
+    You can always send an audio clip to the list of headsets. Essentially you have 3 options:
+
+    - you can send mp3 audio as base64 (for one-time notification)
+
+    - you can save audio first via our API and then use it as many times as you want with ID that references to it (preferable option, see also `/upload`)
+
+    - you can provide a simple string and our service will pronounce it and make mp3 record for you (text to speech).
+
+  "
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          oneOf:
+            - $ref: schemas/audio-request-body.yaml
+            - $ref: schemas/text-request-body.yaml
+            - $ref: schemas/audio-id-request-body.yaml
+        examples:
+          audio:
+            $ref: examples/audio.yaml
+          text:
+            $ref: examples/text.yaml
+          audioId:
+            $ref: examples/audio-id.yaml
+  responses:
+    200:
+      description: 'successful operation'
+      content:
+        application/json:
+          schema:
+            $ref: schemas/response-body.yaml
+    400:
+      description: '**Possible messages**: Validation error | No accessible controllers | audioFile has incorrect extension'
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: schemas/validation-error.yaml
+              - $ref: schemas/no-accessible-controllers.yaml
+    401:
+      description: '**Possible messages**: Authorization header is not provided | Bearer token is expected | Token is not provided'
+      content:
+        application/json:
+          schema:
+            $ref: schemas/not-authenticated.yaml
+  security:
+    - api_token: []

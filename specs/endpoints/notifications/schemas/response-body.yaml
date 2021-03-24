@@ -1,0 +1,9 @@
+type: object
+properties:
+  requestId:
+    type: string
+    format: uuid
+  controllersAccess:
+    type: array
+    items:
+      $ref: controller-access.yaml

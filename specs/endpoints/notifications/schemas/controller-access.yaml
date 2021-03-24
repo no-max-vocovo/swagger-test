@@ -1,0 +1,11 @@
+type: object
+allOf:
+  - $ref: multi-conferences-controller.yaml
+  - type: object
+    properties:
+      available:
+        type: boolean
+        example: true
+      message:
+        type: string
+        example: Success - controller is active

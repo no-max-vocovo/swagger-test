@@ -1,0 +1,15 @@
+summary: Text message
+value:
+  targetControllers:
+    [
+      { serialNumber: '00:0d:b9:44:71:d0', confmap: '1000000000' },
+      { serialNumber: '00:0d:b9:44:71:d0', confnum: 1 },
+    ]
+  repeats: 1
+  interval: 1
+  webhook: 'https://postman-echo.com/post'
+  textToSpeech: {
+    name: "test.mp3",
+    text: "Text to speech",
+    voiceName: "en-GB-MiaNeural"
+  }

@@ -1,0 +1,29 @@
+post:
+  tags:
+    - 'message-cast'
+  description: "
+    If you have some configured message cast in the portal, you can copy it’s ID inside the message cast frame (\"Copy Message Cast ID to clipboard\" button) or cut from the URL on \"Message Cast\" page. This ID can be used as a `messageCastId` parameter. Another parameter `targetGroupId` must be specified if message cast is inherited.
+
+  "
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - messageCastId
+          properties:
+            messageCastId:
+              type: string
+              example: ebea7b5d-a3be-45e4-ab77-a9b737724cd1
+            targetGroupId:
+              type: string
+              example: e2247d29-bf68-4020-92d5-af61974d4b86
+  responses:
+    200:
+      description: Success
+    500:
+      description: Error
+  security:
+    - api_token: []

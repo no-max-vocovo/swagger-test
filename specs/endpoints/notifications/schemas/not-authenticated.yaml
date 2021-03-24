@@ -1,0 +1,17 @@
+type: object
+properties:
+  name:
+    type: string
+    example: 'NotAuthenticated'
+  message:
+    type: string
+    example: 'Authorization header is not provided'
+  code:
+    type: integer
+    example: 401
+  className:
+    type: string
+    example: 'not-authenticated'
+  errors:
+    type: object
+    example: {}
